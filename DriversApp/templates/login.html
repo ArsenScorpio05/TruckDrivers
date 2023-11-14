@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <img src="{% static 'media/images/christy-transport-logo-1.png' %}" alt="Truck" class="truck1">
+    <h1>Login</h1>
+    {% csrf_token %}
+    {% if error_message %}
+        <p id="LoginFailed" >{{ error_message }}</p>
+    {% endif %}
+    <div class="form-container">
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+      
+</body>
+</html>

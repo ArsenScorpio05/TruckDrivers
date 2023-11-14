@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Create Truck Driver Profile</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+    
+</head>
+<body>
+    <img src="{% static 'media/images/christy-transport-logo-1.png' %}" alt="Truck" class="truck1">
+    <h1>Create Truck Driver Profile</h1>
+    <div>
+        <div>
+            <form id="myForm" method="post" enctype="multipart/form-data">
+                <div>
+                    <div>
+                        {% csrf_token %}
+                        {{ form.as_p }} 
+                        <button type="submit" onclick="alert('\n\nSuccessfully Created')">Register Driver</button>     
+                    </div>
+                </div>
+                
+                <button><a href="{% url 'success_page' %}">Back</a></button>
+                
+                <button><a href="{% url 'list_drivers' %}">See all Drivers</a></button>
+            </form>
+        </div>
+        
+        
+        
+    
+        <!-- <div>
+            <h1>Search for driver</h1> -->
+            <!-- <form id="driverForm">
+                <label for="exampleDataList" class="form-label">Datalist example</label>
+                <input list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                
+                \ <datalist id="datalistOptions">
+                    {% for driver in drivers %}
+                        <option value="{{ driver.first_name }} {{ driver.last_name }}" data-first_name="{{ driver.first_name }}" data-last_name="{{ driver.last_name }}" data-email="{{ driver.email }}" data-phone="{{ driver.phone_number }}" data-license="{{ driver.truck_license }}">
+                    {% endfor %}
+                </datalist> -->
+                
+            <!-- </form> --> 
+            
+        <!-- </div> -->
+    
+        
+    </div>
+    
+    <script>
+        ResetForm();
+        clearForm();
+    </script>
+</body>
+</html>

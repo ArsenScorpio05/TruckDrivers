@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <!-- <script src="{% static 'js/listDrivers.js' %}" ></script> -->
+  <script src="{% static 'js/listDrivers.js' %}"></script>  
+</head>
+<body>
+    {% block content %}
+    <img src="{% static 'media/images/christy-transport-logo-1.png' %}" alt="Truck" class="truck1">
+    <h1>List of Drivers</h1>
+    <input type="text" id="searchInput" placeholder="Search drivers...">
+    <p>Total Drivers: {{ drivers|length }}</p>
+
+    <img src="{% static 'media/images/truck-05.png' %}" alt="Truck" class="truck">
+    
+    
+    
+    <ul id="driverList" class="list-health-contract">
+        {% csrf_token %}
+        {% for driver in drivers %}
+            <li><a href="{% url 'driver_detail' driver.id %}">{{ driver.first_name }} {{ driver.last_name }}</a></li>
+        {% endfor %}
+    </ul>
+    <button><a href="{% url 'success_page' %}">Back</a></button>
+    <button><a href="{% url 'create_truck_driver' %}">Create New Driver</a></button>
+    {% endblock %}
+</body>
+</html>
