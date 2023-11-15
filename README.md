@@ -21,3 +21,8 @@ Be advised to check on 'requirements.txt' file
    ```bash
    git clone https://github.com/ArsenScorpio05/TruckDrivers.git
 
+
+
+## Contributing
+
+- Contributions are welcome! Feel free to open issues or pull requests.
