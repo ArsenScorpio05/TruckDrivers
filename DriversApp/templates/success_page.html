@@ -7,14 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success Page</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     {% csrf_token %}
     <img src="{% static 'media/images/christy-transport-logo-1.png' %}" alt="Truck" class="truck1">
-    <h4>Welcome {{ username }}! <button><a href="{% url 'logout' %}">Logout</a></button></h4>
+    <h4>Welcome {{ username }}! <button id="logout-but"><a href="{% url 'logout' %}"><i class="fas fa-power-off"></i>  Logout</a></button></h4>
     <h1>Logged In Successfully!</h1>
     <p>Choose one of the options below.</p>
-    <button><a href="{% url 'create_truck_driver' %}">Create New Driver</a></button>
-    <button><a href="{% url 'list_drivers' %}">See All Drivers</a></button>
+    <button class="first-two-buttons"><a href="{% url 'create_truck_driver' %}"><i class="fas fa-user-plus"></i> Create New Driver</a></button>
+    <button class="first-two-buttons"><a href="{% url 'list_drivers' %}"><i class="fas fa-users"></i> See All Drivers</a></button>
+    <br><button><a href="{% url 'upcoming_health_document_expirations' %}"><i class="fas fa-hourglass-half"></i> Health Document Expiring Within 2-Weeks</a></button>
+    <br><button><a href="{% url 'upcoming_driving_licences_expirations' %}"><i class="fas fa-hourglass-half"></i> Driving Licence Expiring Within 2-Weeks</a></button>
+    <br><button><a href="{% url 'upcoming_driver_report_expirations' %}"><i class="fas fa-hourglass-half"></i> Driver Report Expiring Within 2-Weeks</a></button>
+    <br><button><a href="{% url 'driver_list' %}"><i class="fas fa-exclamation-circle"></i> Penalties</a></button>
 </body>
 </html>

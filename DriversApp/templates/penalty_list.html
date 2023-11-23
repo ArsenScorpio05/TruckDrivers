@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver List</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <h1>Driver List with Penalties</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Total Penalties</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for driver in drivers %}
+                <tr>
+                    <td>{{ driver.first_name }}</td>
+                    <td>{{ driver.last_name }}</td>
+                    <td style="text-align: center" ><a href="{% url 'penalty_details' driver_id=driver.id %}">{{ driver.total_penalties }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><button><a href="{% url 'success_page' %}"><i class="fas fa-arrow-left"></i> Back</a></button>
+    <button><a href="{% url 'register_penalty' %}"><i class="fas fa-plus-circle"></i> Register New Penalty</a></button>
+    <button><a href="{% url 'export_penalties_csv' %}" class="btn btn-primary"><i class="fas fa-download"></i> Export</a></button>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Penalty</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <h1>Register New Penalty</h1>
+    <form method="post" action="{% url 'register_penalty' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"><i class="fas fa-save"></i> Register Ticket</button>
+        <br><button><a href="{% url 'driver_list' %}"><i class="fas fa-arrow-left"></i> Back</a></button>
+    </form>
+</body>
+</html>

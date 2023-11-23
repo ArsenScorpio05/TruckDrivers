@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  <!-- <script src="{% static 'js/listDrivers.js' %}" ></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="{% static 'js/listDrivers.js' %}"></script>  
 </head>
 <body>
@@ -26,8 +26,9 @@
             <li><a href="{% url 'driver_detail' driver.id %}">{{ driver.first_name }} {{ driver.last_name }}</a></li>
         {% endfor %}
     </ul>
-    <button><a href="{% url 'success_page' %}">Back</a></button>
-    <button><a href="{% url 'create_truck_driver' %}">Create New Driver</a></button>
+    <button><a href="{% url 'success_page' %}"><i class="fas fa-home"></i> Home</a></button>
+    <button><a href="{% url 'create_truck_driver' %}"><i class="fas fa-user-plus"></i> Create New Driver</a></button>
+    <button><a href="{% url 'export_csv' %}"><i class="fas fa-download"></i> Export</a></button>
     {% endblock %}
 </body>
 </html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver List</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <h1>Penalty Details for {{ driver.first_name }} {{ driver.last_name }}</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Penalty Date</th>
+                <th>Amount Charged</th>
+                <th>Description</th>
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for penalty in penalties %}
+                <tr>
+                    <td>{{ penalty.penalty_date }}</td>
+                    <td>${{ penalty.amount_charged }}</td>
+                    <td>{{ penalty.description }}</td>
+                    <td style="color: blue;">
+                        <a href="{% url 'edit_penalty' penalty_id=penalty.id %}"><i class="fas fa-pencil-alt"></i> Edit</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td style="background-color: black; color: red;">---</td>
+                <td colspan="1" style="text-align: left; background-color: black; color: rgb(58, 241, 8);">Total: ${{ total_amount }}</td>
+                <td style="background-color: black; color: red;">---</td>
+                <td style="background-color: black; color: red;">---</td>
+            </tr>
+        </tbody>
+    </table>
+    <br><button><a href="{% url 'driver_list' %}"><i class="fas fa-exclamation-circle"></i> Penalties</a></button>
+</body>
+</html>

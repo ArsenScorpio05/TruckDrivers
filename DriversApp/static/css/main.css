@@ -1,13 +1,13 @@
 /* Add these styles to your existing CSS file, or create a new one */
 
 body {
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(45deg, #ff6cce, #0fc749, #c9e60d, #fdfef5);
-	background-size: 400% 400%;
-  /* background-repeat: no-repeat; */
-	animation: gradient 5s ease infinite;
-	/* height: 100%; */
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(45deg, #ff6cce, #0fc749, #c9e60d, #fdfef5);
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    animation: gradient 10s ease infinite;
+    align-items: center;
 }
 
 @keyframes gradient {
@@ -45,17 +45,17 @@ body {
     border: 1px solid black;
   }
   
-  button:hover {
+button:hover {
     background-color: #45a049;
-  }
+}
   
 a {
     text-decoration: none;
     color: inherit;
-  }
+}
   
 a:hover{
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: bold;
     background-color: #45a049;
     cursor: pointer;
@@ -76,8 +76,8 @@ ul {
 
 
 #imagesDisplayer{
-  width: 250px;
-  height: 250px;
+    width: 250px;
+    height: 250px;
 }
 
 
@@ -110,7 +110,7 @@ ul {
   }
   
   /* Style for login button */
-  .form-container button {
+.form-container button {
     width: 100%;
     padding: 10px;
     background-color: #4caf50;
@@ -119,36 +119,37 @@ ul {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-  }
+}
   
   /* Hover effect for login button */
-  .form-container button:hover {
+.form-container button:hover {
     background-color: #45a049;
-  }
+}
 
-  #DeleteDriverButton{
+#DeleteDriverButton{
     background-color: red;
     color: white;
     font-weight: bold;
-  }
+}
 
-  #DeleteDriverButton:hover{
+#DeleteDriverButton:hover{
     background-color: rgb(190, 8, 8);
     color: white;
     font-weight: bold;
-  }
+}
 
 .list-health-contract {
     display: grid;
     justify-content: center;
     padding: 0;
     list-style-type: none;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 15%;
+    margin-right: 15%;
     /* background-color: #837171; */
-    background: linear-gradient(90deg, #685461, #356243, #828c40, #d8e193);
-	  background-size: 400% 400%;
-	  animation: gradient1 55s ease infinite;
+    /* background: linear-gradient(90deg, #685461, #356243, #828c40, #d8e193); */
+    background-color: rgb(0, 0, 0);
+    background-size: 400% 400%;
+    animation: gradient1 55s ease infinite;
     color: white;
     font-weight: bold;
 }
@@ -228,5 +229,54 @@ ul {
 }
 
 
+#notified-yes{
+  text-decoration: underline;
+  color: rgb(13, 255, 0);
+  background-color: black;
+  font-size: 5px;
+}
+
+#notified-no{
+  text-decoration: underline;
+  color: rgb(255, 0, 0);
+  font-size: 5px;
+}
 
 
+table {
+  width: 80%; /* Adjust as needed */
+  max-height: 400px; /* Adjust as needed */
+  overflow-y: auto;
+  border-collapse: collapse;
+  margin: auto;
+  background-color: white; /* Optional, add background color */
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+
+.first-two-buttons{
+    background-color: black;
+    color: #00ff08;
+}
+
+.first-two-buttons:hover, a:hover{
+    background-color: #00ff08;
+    color: black;
+}
+
+
+#logout-but{
+    font-size: 12px;
+    background-color: rgb(38, 105, 42);
+    color: white;
+    font-weight: bold;
+}
